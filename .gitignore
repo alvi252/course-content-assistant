@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Search index, embedding cache and the ideas log (index rebuilt by `course-assistant ingest`)
+data/*.sqlite
+data/*.sqlite-*
+*.jsonl
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
