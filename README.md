@@ -21,18 +21,45 @@ This assistant is built around four rules:
 
 ## Video guides
 
-Short screen recordings with captions, no voice. Each shows one task.
+Short screen recordings with captions, no voice. Each shows one task. They play below as GIFs; the sharper mp4 files are in [`assets/videos`](assets/videos).
 
-| Video | What it shows |
-|---|---|
-| [1. Get ideas](assets/videos/01-get-ideas.mp4) | Ask for 15 ideas in any format, optionally on a topic |
-| [2. Check the source](assets/videos/02-check-the-source.mp4) | Open the lesson passage behind an idea, with the quote highlighted |
-| [3. Mark ideas you'll use](assets/videos/03-mark-used.mp4) | Mark two ideas as used, ask again, get only fresh passages |
-| [4. Write a script](assets/videos/04-write-script.mp4) | Turn an idea into a script and caption in her voice |
-| [5. Library coverage](assets/videos/05-coverage.mp4) | See which lessons have never been used |
-| [6. Voice](assets/videos/06-voice.mp4) | The style sheet and sample posts the scripts follow |
+### 1. Get ideas
 
-They are recorded by `scripts/record_guides.py` against a running server, so they can be re-made after any change.
+Ask for 15 ideas in any format, optionally on a topic.
+
+![1. Get ideas](assets/gifs/01-get-ideas.gif)
+
+### 2. Check the source
+
+Open the lesson passage behind an idea, with the quote highlighted.
+
+![2. Check the source](assets/gifs/02-check-the-source.gif)
+
+### 3. Mark ideas you'll use
+
+Mark two ideas as used, ask again, get only fresh passages.
+
+![3. Mark ideas you'll use](assets/gifs/03-mark-used.gif)
+
+### 4. Write a script
+
+Turn an idea into a script and caption in her voice.
+
+![4. Write a script](assets/gifs/04-write-script.gif)
+
+### 5. Library coverage
+
+See which lessons have never been used.
+
+![5. Library coverage](assets/gifs/05-coverage.gif)
+
+### 6. Voice
+
+The style sheet and sample posts the scripts follow.
+
+![6. Voice](assets/gifs/06-voice.gif)
+
+They are recorded by `scripts/record_guides.py` against a running server, mp4 and GIF together, so they can be re-made after any change.
 
 ## Results (live run)
 
