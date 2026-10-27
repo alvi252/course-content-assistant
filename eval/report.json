@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-10-27T01:11:00+00:00",
+  "llm_model": "gpt-4.1-mini",
+  "embedding_model": "text-embedding-3-small",
+  "settings": {
+    "count_per_round": 15,
+    "ideas_per_lesson": 2,
+    "skip_used_days": 30,
+    "min_passage_chars": 200,
+    "seed": null
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "proposed": 15,
+      "kept": 15,
+      "dropped": {},
+      "grounded_rate": 1.0,
+      "distinct_lessons": 12,
+      "from_new_lessons": 15,
+      "repeats": 0,
+      "fresh_passages_left": 43,
+      "latency_ms": 14372.0
+    },
+    {
+      "round": 2,
+      "proposed": 15,
+      "kept": 15,
+      "dropped": {},
+      "grounded_rate": 1.0,
+      "distinct_lessons": 11,
+      "from_new_lessons": 0,
+      "repeats": 0,
+      "fresh_passages_left": 28,
+      "latency_ms": 16750.5
+    },
+    {
+      "round": 3,
+      "proposed": 13,
+      "kept": 13,
+      "dropped": {},
+      "grounded_rate": 1.0,
+      "distinct_lessons": 9,
+      "from_new_lessons": 0,
+      "repeats": 0,
+      "fresh_passages_left": 13,
+      "latency_ms": 10122.1
+    }
+  ],
+  "topic": {
+    "topic": "leftovers",
+    "requested": 5,
+    "passages": 5,
+    "kept": 5,
+    "dropped": {},
+    "mention_topic": 4,
+    "latency_ms": 5799.5
+  },
+  "scripts": [
+    {
+      "idea_id": 1,
+      "title": "How to Keep Your Partner from Snacking on Batch Cooking Components",
+      "format": "post",
+      "words": 129,
+      "warnings": [],
+      "latency_ms": 1646.8
+    },
+    {
+      "idea_id": 2,
+      "title": "Why the 90-Minute Sunday is Your Batch Cooking Game-Changer",
+      "format": "talking_head",
+      "words": 121,
+      "warnings": [],
+      "latency_ms": 1997.6
+    },
+    {
+      "idea_id": 3,
+      "title": "The Empty-Sink Rule: Keep Your Kitchen Calm",
+      "format": "text_graphic",
+      "words": 25,
+      "warnings": [],
+      "latency_ms": 948.7
+    }
+  ],
+  "totals": {
+    "llm_calls": 7,
+    "input_tokens": 11943,
+    "output_tokens": 7214,
+    "embedding_tokens": 2,
+    "cost_usd": 0.01631964,
+    "latency_ms_per_call_mean": 7241.5,
+    "latency_ms_per_call_max": 16740.7
+  }
+}

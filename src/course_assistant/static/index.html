@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Course Content Assistant</title>
+  <meta name="description" content="Instagram content ideas pulled from your own course lessons, each with the exact quote it came from.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23b83f0e'/%3E%3Cpath d='M9 14h14v3a7 7 0 0 1-14 0z' fill='none' stroke='white' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M13 9v2M16 8v3M19 9v2' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 11h14v3a7 7 0 0 1-14 0z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 4.5v2.5M12 3.5V7M15 4.5V7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </span>
+      <div>
+        <div class="brand-name">Course Content Assistant</div>
+        <div class="brand-sub">Demo · fictional author and courses</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="tabs" role="tablist" aria-label="Sections">
+      <button type="button" role="tab" id="tab-ideas" class="tab" aria-selected="true" aria-controls="panel-ideas" data-tab="ideas">Ideas</button>
+      <button type="button" role="tab" id="tab-coverage" class="tab" aria-selected="false" aria-controls="panel-coverage" data-tab="coverage" tabindex="-1">Library coverage</button>
+      <button type="button" role="tab" id="tab-voice" class="tab" aria-selected="false" aria-controls="panel-voice" data-tab="voice" tabindex="-1">Voice</button>
+    </div>
+
+    <!-- Ideas -->
+    <section id="panel-ideas" class="tabpanel" role="tabpanel" aria-labelledby="tab-ideas">
+      <h1 class="page-title">Instagram ideas from your own lessons</h1>
+      <p class="page-lead">Every idea points to the lesson it came from, with the exact quote.</p>
+
+      <form id="ideas-form" class="form-card" autocomplete="off">
+        <div class="field">
+          <label for="f-count">How many ideas</label>
+          <input id="f-count" name="count" type="number" inputmode="numeric" min="1" max="30" step="1" value="15" required>
+        </div>
+        <div class="field">
+          <label for="f-format">Format</label>
+          <select id="f-format" name="format">
+            <option value="">Any format</option>
+          </select>
+        </div>
+        <div class="field field-wide">
+          <label for="f-topic">Topic</label>
+          <input id="f-topic" name="topic" type="text" maxlength="200" placeholder="Optional: a topic, e.g. leftovers">
+        </div>
+        <div class="field field-wide">
+          <label for="f-days">Skip ideas I used in the last (days)</label>
+          <input id="f-days" name="skip_used_days" type="number" inputmode="numeric" min="0" max="365" step="1" value="30" required>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="ideas-submit">Get ideas</button>
+          <span id="ideas-status" class="form-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <div id="ideas-error" class="notice notice-error" role="alert" hidden></div>
+      <div id="ideas-summary" class="summary" hidden></div>
+      <div id="ideas-list" class="cards"></div>
+
+      <section class="history" aria-label="History">
+        <button type="button" class="link-btn" id="history-toggle" aria-expanded="false" aria-controls="history-body">
+          <span class="caret" aria-hidden="true"></span>History: ideas you used
+        </button>
+        <div id="history-body" hidden>
+          <p id="history-status" class="muted" role="status" aria-live="polite"></p>
+          <div id="history-list" class="cards"></div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Coverage -->
+    <section id="panel-coverage" class="tabpanel" role="tabpanel" aria-labelledby="tab-coverage" hidden>
+      <h1 class="page-title">Library coverage</h1>
+      <p class="page-lead">Which lessons you have drawn on, and which you never have.</p>
+      <p id="coverage-status" class="muted" role="status" aria-live="polite"></p>
+      <div id="coverage-error" class="notice notice-error" role="alert" hidden></div>
+      <p id="coverage-totals" class="summary" hidden></p>
+      <div id="coverage-list"></div>
+    </section>
+
+    <!-- Voice -->
+    <section id="panel-voice" class="tabpanel" role="tabpanel" aria-labelledby="tab-voice" hidden>
+      <h1 class="page-title">Your voice</h1>
+      <p class="page-lead">Scripts are written to sound like this.</p>
+      <p id="voice-status" class="muted" role="status" aria-live="polite"></p>
+      <div id="voice-error" class="notice notice-error" role="alert" hidden></div>
+      <div id="voice-body"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Every idea is checked in code: its quote must appear word for word in the lesson it cites.</p>
+    <p class="footer-sub"><a href="/docs">API docs</a><span id="footer-models"></span></p>
+  </footer>
+</body>
+</html>
