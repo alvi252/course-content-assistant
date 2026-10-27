@@ -21,45 +21,45 @@ This assistant is built around four rules:
 
 ## Video guides
 
-Short screen recordings with captions, no voice. Each shows one task. They play below as GIFs; the sharper mp4 files are in [`assets/videos`](assets/videos).
+Short screen recordings with captions, no voice. Each shows one task: the part of the page being described is highlighted, and waits for the model are cut. They play below as animated images; the mp4 files are in [`assets/videos`](assets/videos).
 
 ### 1. Get ideas
 
 Ask for 15 ideas in any format, optionally on a topic.
 
-![1. Get ideas](assets/gifs/01-get-ideas.gif)
+![1. Get ideas](assets/animations/01-get-ideas.webp)
 
 ### 2. Check the source
 
 Open the lesson passage behind an idea, with the quote highlighted.
 
-![2. Check the source](assets/gifs/02-check-the-source.gif)
+![2. Check the source](assets/animations/02-check-the-source.webp)
 
 ### 3. Mark ideas you'll use
 
-Mark two ideas as used, ask again, get only fresh passages.
+Mark two ideas as used, ask again, get only fresh passages, then find the used ones in your history.
 
-![3. Mark ideas you'll use](assets/gifs/03-mark-used.gif)
+![3. Mark ideas you'll use](assets/animations/03-mark-used.webp)
 
 ### 4. Write a script
 
 Turn an idea into a script and caption in her voice.
 
-![4. Write a script](assets/gifs/04-write-script.gif)
+![4. Write a script](assets/animations/04-write-script.webp)
 
 ### 5. Library coverage
 
 See which lessons have never been used.
 
-![5. Library coverage](assets/gifs/05-coverage.gif)
+![5. Library coverage](assets/animations/05-coverage.webp)
 
 ### 6. Voice
 
 The style sheet and sample posts the scripts follow.
 
-![6. Voice](assets/gifs/06-voice.gif)
+![6. Voice](assets/animations/06-voice.webp)
 
-They are recorded by `scripts/record_guides.py` against a running server, mp4 and GIF together, so they can be re-made after any change.
+They are recorded by `scripts/record_guides.py` against a running server, mp4 and animated WebP together, so they can be re-made after any change.
 
 ## Results (live run)
 
@@ -148,7 +148,7 @@ Interactive docs at `/docs`. All settings are environment variables, listed with
 
 ## Quality
 
-- 223 tests with fake models, including doctests for every check: no network in tests.
+- 226 tests with fake models, including doctests for every check: no network in tests.
 - `ruff` and `mypy` clean (every function typed).
 - The page is plain HTML, CSS and JavaScript with no build step and no third-party requests, under a strict Content Security Policy. Server data is never inserted as HTML.
 
