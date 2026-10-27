@@ -121,7 +121,7 @@ Interactive docs at `/docs`. All settings are environment variables, listed with
 
 ## Quality
 
-- 211 tests with fake models, including doctests for every check: no network in tests.
+- 223 tests with fake models, including doctests for every check: no network in tests.
 - `ruff` and `mypy` clean (every function typed).
 - The page is plain HTML, CSS and JavaScript with no build step and no third-party requests, under a strict Content Security Policy. Server data is never inserted as HTML.
 
