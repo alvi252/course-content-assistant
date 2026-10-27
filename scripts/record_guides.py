@@ -230,16 +230,36 @@ def cut(source: Path, clips: list[Clip], out_dir: Path) -> list[Path]:
     return written
 
 
+# GitHub does not play mp4 files stored in a repository, but it shows GIFs inline in the README.
+GIF_FILTER = (
+    "fps=8,scale=960:-1:flags=lanczos,split[a][b];"
+    "[a]palettegen=max_colors=128:stats_mode=diff[p];"
+    "[b][p]paletteuse=dither=bayer:bayer_scale=4:diff_mode=rectangle"
+)
+
+
+def to_gifs(videos: list[Path], out_dir: Path) -> None:
+    ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for video in videos:
+        target = out_dir / f"{video.stem}.gif"
+        command = [ffmpeg, "-y", "-loglevel", "error", "-i", str(video)]
+        command += ["-vf", GIF_FILTER, "-loop", "0", str(target)]
+        subprocess.run(command, check=True)  # noqa: S603 - fixed arguments, no shell
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--base-url", default="http://127.0.0.1:8765")
     parser.add_argument("--videos", type=Path, default=Path("assets/videos"))
+    parser.add_argument("--gifs", type=Path, default=Path("assets/gifs"))
     parser.add_argument("--screenshots", type=Path, default=Path("assets/screenshots"))
     args = parser.parse_args()
     args.screenshots.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         raw, clips = run_session(args.base_url, Path(tmp), args.screenshots)
         written = cut(raw, clips, args.videos)
+    to_gifs(written, args.gifs)
     for clip, path in zip(clips, written, strict=True):
         print(f"{path}  {clip.end - clip.start:5.1f} s  {clip.title}")
 
