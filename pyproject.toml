@@ -71,5 +71,5 @@ module = ["rank_bm25.*", "pypdf.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
-testpaths = ["tests", "src"]
+testpaths = ["tests", "src", "scripts"]
 addopts = "-q --doctest-modules"
